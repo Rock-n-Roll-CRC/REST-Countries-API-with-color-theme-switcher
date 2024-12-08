@@ -1,0 +1,66 @@
+{
+  "type": "module",
+  "name": "rest-countries-api-with-color-theme-switcher",
+  "version": "1.0.0",
+  "description": "A challenge project, built based on the designs provided by Frontend Mentor, featuring a list of countries fetched from the REST Countries API with the ability to filter them by region or search for a specific country. The project also includes a light/dark color theme switcher.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky",
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rock-n-Roll-CRC/REST-Countries-API-with-color-theme-switcher.git"
+  },
+  "keywords": [
+    "rest-countries",
+    "coding-challenge",
+    "frontend-mentor"
+  ],
+  "author": "Danil Dikhtyar <danil.dikhtyar@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rock-n-Roll-CRC/REST-Countries-API-with-color-theme-switcher/issues"
+  },
+  "homepage": "https://github.com/Rock-n-Roll-CRC/REST-Countries-API-with-color-theme-switcher#readme",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.16.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.16.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "globals": "^15.12.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.10",
+    "postcss": "^8.4.49",
+    "prettier": "3.4.2",
+    "sass": "^1.82.0",
+    "stylelint": "^16.11.0",
+    "stylelint-config-prettier-scss": "^1.0.0",
+    "stylelint-config-recess-order": "^5.1.1",
+    "stylelint-config-sass-guidelines": "^12.1.0",
+    "stylelint-config-standard-scss": "^14.0.0",
+    "stylelint-declaration-block-no-ignored-properties": "^2.8.0",
+    "stylelint-declaration-strict-value": "^1.10.6",
+    "stylelint-plugin-defensive-css": "^1.0.4",
+    "stylelint-plugin-logical-css": "^1.2.1",
+    "stylelint-rem-over-px": "^1.0.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.17.0",
+    "vite": "^6.0.1"
+  }
+}

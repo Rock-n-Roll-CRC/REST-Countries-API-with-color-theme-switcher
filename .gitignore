@@ -1,0 +1,5 @@
+# Package Dependencies:
+node_modules/
+
+# Distribution Directory:
+dist/
