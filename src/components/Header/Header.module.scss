@@ -1,0 +1,19 @@
+@use "../../styles/settings" as *;
+@use "../../styles/tools" as *;
+
+.header {
+  @include flex-shorthand(row, nowrap, null, center, space-between);
+  @include themify {
+    @include color-shorthand(themed("color-gray"), themed("color-accent"));
+
+    box-shadow: 0 0 1rem rgba(themed("color-gray"), 15%);
+  }
+
+  padding: 3.2rem 1.6rem;
+  font-size: 0.7rem;
+
+  &__heading {
+    font-weight: $font-weight-bold;
+    cursor: default;
+  }
+}
