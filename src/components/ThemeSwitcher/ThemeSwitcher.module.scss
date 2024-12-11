@@ -1,0 +1,21 @@
+@use "../../styles/settings" as *;
+@use "../../styles/tools" as *;
+
+.theme-switcher {
+  @include remove-button-styles;
+  @include flex-shorthand(row, nowrap, 0.7rem, center);
+  @include themify {
+    @include color-shorthand(themed("color-gray"), themed("color-accent"));
+  }
+
+  cursor: pointer;
+
+  &__icon {
+    @include max-size-shorthand(1.5rem, 1.5rem);
+  }
+
+  &__caption {
+    font: $font-weight-semi-bold 1.22rem $font-family-nunito-sans;
+    text-transform: capitalize;
+  }
+}
