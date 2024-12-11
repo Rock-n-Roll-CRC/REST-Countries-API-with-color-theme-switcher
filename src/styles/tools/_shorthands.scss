@@ -1,0 +1,23 @@
+@mixin max-size-shorthand($max-inline-size, $max-block-size) {
+  max-inline-size: $max-inline-size;
+  max-block-size: $max-block-size;
+}
+
+@mixin flex-shorthand(
+  $flex-direction: row,
+  $flex-wrap: nowrap,
+  $gap: null,
+  $align-items: null,
+  $justify-content: null
+) {
+  display: flex;
+  flex-flow: $flex-direction $flex-wrap;
+  gap: $gap;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+
+@mixin color-shorthand($color, $background-color) {
+  color: $color;
+  background-color: $background-color;
+}

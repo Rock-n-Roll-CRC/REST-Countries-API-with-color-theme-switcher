@@ -1,0 +1,7 @@
+@use "../settings/colors" as *;
+
+@mixin remove-button-styles {
+  padding: 0;
+  background-color: $white;
+  border: 0;
+}
