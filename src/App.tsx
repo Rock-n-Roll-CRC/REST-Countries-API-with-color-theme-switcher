@@ -10,6 +10,7 @@ const App = () => {
   return (
     <ThemeProvider>
       <BrowserRouter>
+        {/* TODO: Implement code splitting */}
         <Routes>
           <Route index element={<Homepage />} />
           {/* TODO: Add a route for an unknown page */}
