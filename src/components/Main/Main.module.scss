@@ -1,0 +1,9 @@
+@use "../../styles/tools" as *;
+
+.main {
+  @include themify {
+    @include color-shorthand(themed("color-gray"), themed("color-main"));
+  }
+
+  flex: auto;
+}
