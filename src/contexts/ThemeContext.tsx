@@ -39,7 +39,16 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
         toggleTheme,
       }}
     >
-      <div className={`theme--${theme}`}>{children}</div>
+      <div
+        className={`theme--${theme}`}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          minBlockSize: "100vb",
+        }}
+      >
+        {children}
+      </div>
     </ThemeContext.Provider>
   );
 };
