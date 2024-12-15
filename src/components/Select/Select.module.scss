@@ -1,0 +1,71 @@
+@use "../../styles/settings" as *;
+@use "../../styles/tools" as *;
+
+.select {
+  @include flex-shorthand(row, nowrap, null, center, space-between);
+
+  position: relative;
+  padding: 1.5rem 1.8rem 1.5rem 2.4rem;
+  font-size: 1.22rem;
+  cursor: pointer;
+
+  &,
+  &__option-list {
+    @include themify {
+      @include color-shorthand(themed("color-gray"), themed("color-accent"));
+    }
+
+    max-inline-size: 20rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2rem 1rem rgba($very-dark-blue, 8%);
+  }
+
+  &__icon {
+    @include max-size-shorthand(1.1rem, 1.1rem);
+  }
+
+  &__option-list {
+    @include remove-list-styles;
+    @include absolute-shorthand(calc(100% + 0.5rem), auto, auto, 0);
+
+    inline-size: 100%;
+    padding: 1.4rem 0;
+  }
+
+  &__option {
+    position: relative;
+    padding: 0.28rem 2.4rem;
+
+    &:first-child {
+      padding-block-start: 0;
+    }
+
+    &:last-child {
+      padding-block-end: 0;
+    }
+
+    &::after {
+      @include absolute-shorthand(50%, 2rem);
+      @include size-shorthand(1rem, 0.5rem);
+      @include themify {
+        border-block-end: 0.1rem solid themed("color-gray");
+        border-inline-start: 0.1rem solid themed("color-gray");
+      }
+
+      content: "";
+      opacity: 0;
+      transition:
+        transform 0.4s ease,
+        opacity 0.4s ease;
+      transform: translateY(-50%) rotate(-45deg) scale(0);
+      transform-origin: center;
+    }
+
+    @media (hover: hover) {
+      &:hover::after {
+        opacity: 1;
+        transform: translateY(-50%) rotate(-45deg) scale(1);
+      }
+    }
+  }
+}
