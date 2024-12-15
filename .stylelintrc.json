@@ -46,6 +46,7 @@
       }
     ],
 
-    "@stylistic/string-quotes": "double"
+    "@stylistic/string-quotes": "double",
+    "max-nesting-depth": 3
   }
 }
