@@ -1,0 +1,5 @@
+@use "../../styles/tools" as *;
+
+.country-card-search-options {
+  @include flex-shorthand(column, nowrap, 4rem);
+}
