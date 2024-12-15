@@ -5,15 +5,14 @@
   @include flex-shorthand(row, nowrap, null, center, space-between);
   @include themify {
     @include color-shorthand(themed("color-gray"), themed("color-accent"));
-
-    box-shadow: 0 0 1rem rgba(themed("color-gray"), 15%);
   }
 
-  padding: 3.2rem 1.6rem;
-  font-size: 0.7rem;
+  position: relative;
+  padding: 3.05rem 1.6rem;
+  box-shadow: 0 0 0.5rem rgba($very-dark-blue, 15%);
 
   &__heading {
-    font-weight: $font-weight-bold;
+    font: $font-weight-bold 1.4rem $font-family-nunito-sans;
     cursor: default;
   }
 }
