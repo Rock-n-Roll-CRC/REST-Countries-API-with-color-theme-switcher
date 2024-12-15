@@ -3,7 +3,7 @@
 
 .theme-switcher {
   @include remove-button-styles;
-  @include flex-shorthand(row, nowrap, 0.7rem, center);
+  @include flex-shorthand(row, nowrap, 0.8rem, center);
   @include themify {
     @include color-shorthand(themed("color-gray"), themed("color-accent"));
   }
@@ -15,7 +15,7 @@
   }
 
   &__caption {
-    font: $font-weight-semi-bold 1.22rem $font-family-nunito-sans;
+    font: $font-weight-semi-bold 1.2rem $font-family-nunito-sans;
     text-transform: capitalize;
   }
 }
