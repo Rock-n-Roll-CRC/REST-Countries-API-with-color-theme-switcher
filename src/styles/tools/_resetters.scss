@@ -5,3 +5,23 @@
   background-color: $white;
   border: 0;
 }
+
+@mixin remove-input-styles {
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+@mixin remove-search-input-styles {
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    appearance: none;
+  }
+}
+
+@mixin remove-list-styles {
+  padding: 0;
+  list-style: none;
+}

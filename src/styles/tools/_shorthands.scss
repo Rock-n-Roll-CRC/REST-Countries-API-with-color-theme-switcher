@@ -1,3 +1,19 @@
+@mixin absolute-shorthand(
+  $inset-block-start: auto,
+  $inset-inline-end: auto,
+  $inset-block-end: auto,
+  $inset-inline-start: auto
+) {
+  position: absolute;
+  inset: $inset-block-start $inset-inline-end $inset-block-end
+    $inset-inline-start;
+}
+
+@mixin size-shorthand($inline-size, $block-size) {
+  inline-size: $inline-size;
+  block-size: $block-size;
+}
+
 @mixin max-size-shorthand($max-inline-size, $max-block-size) {
   max-inline-size: $max-inline-size;
   max-block-size: $max-block-size;
