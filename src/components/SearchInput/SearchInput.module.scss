@@ -1,0 +1,39 @@
+@use "../../styles/settings" as *;
+@use "../../styles/tools" as *;
+
+.search-input {
+  @include flex-shorthand(row, nowrap, null, center);
+  @include themify {
+    @include color-shorthand(themed("color-gray"), themed("color-accent"));
+  }
+
+  min-block-size: 4.8rem;
+  padding-inline-start: 3.1rem;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.2rem 1rem rgba($very-dark-blue, 8%);
+
+  &__icon {
+    @include max-size-shorthand(1.8rem, 1.8rem);
+    @include themify {
+      color: themed("color-input");
+    }
+  }
+
+  &__input {
+    @include remove-input-styles;
+    @include remove-search-input-styles;
+
+    flex: auto;
+    align-self: stretch;
+    padding-inline: 2.5rem;
+    font-size: 1.23rem;
+  }
+
+  &__input,
+  &__input::placeholder {
+    @include themify {
+      @include color-shorthand(themed("color-input"), themed("color-accent"));
+    }
+  }
+}
