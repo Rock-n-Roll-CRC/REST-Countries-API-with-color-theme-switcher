@@ -1,5 +1,5 @@
 @use "../../styles/tools" as *;
 
 .country-cards-container {
-  @include flex-shorthand(column, nowrap, 1rem);
+  @include flex-shorthand(column, nowrap, 3.2rem);
 }
