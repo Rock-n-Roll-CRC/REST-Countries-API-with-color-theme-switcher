@@ -42,20 +42,22 @@ const Select = ({
         {value?.label ?? placeholder}
       </span>
 
-      <svg
-        className={styles.select__icon}
-        onClick={
-          value
-            ? (event) => {
-                event.stopPropagation();
+      {value && !isOpen ? (
+        <svg
+          className={`${styles.select__icon ?? ""} ${styles["select__icon--close"] ?? ""}`}
+          onClick={(event) => {
+            event.stopPropagation();
 
-                handleSelectOption(undefined);
-              }
-            : undefined
-        }
-      >
-        <use href={new URL(`${iconsURL}#${icon}`, import.meta.url).href} />
-      </svg>
+            handleSelectOption(undefined);
+          }}
+        >
+          <use href={new URL(`${iconsURL}#${icon}`, import.meta.url).href} />
+        </svg>
+      ) : (
+        <svg className={styles.select__icon}>
+          <use href={new URL(`${iconsURL}#${icon}`, import.meta.url).href} />
+        </svg>
+      )}
 
       {isOpen && (
         <ul className={styles["select__option-list"]}>

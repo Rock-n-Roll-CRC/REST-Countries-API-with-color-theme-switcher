@@ -22,6 +22,10 @@
 
   &__icon {
     @include max-size-shorthand(1.1rem, 1.1rem);
+
+    &--close {
+      @include max-size-shorthand(1.4rem, 1.4rem);
+    }
   }
 
   &__option-list {
