@@ -7,3 +7,8 @@ html {
 body {
   font: $font-weight-regular 1.6rem / 1.5 $font-family-nunito-sans;
 }
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
