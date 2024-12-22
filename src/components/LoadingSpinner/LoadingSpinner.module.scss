@@ -1,0 +1,12 @@
+@use "../../styles/tools" as *;
+
+.loading-spinner {
+  @include max-size-shorthand(3rem, 3rem);
+  @include themify {
+    fill: themed("color-gray");
+  }
+
+  &--fullpage {
+    @include max-size-shorthand(10rem, 10rem);
+  }
+}
