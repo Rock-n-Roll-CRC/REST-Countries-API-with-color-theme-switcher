@@ -1,0 +1,36 @@
+@use "../../styles/settings" as *;
+@use "../../styles/tools" as *;
+
+.message404 {
+  @include size-shorthand(100vi, 100vb);
+  @include flex-shorthand(column, nowrap, 5rem, center, center);
+  @include themify {
+    @include color-shorthand(themed("color-gray"), themed("color-main"));
+  }
+
+  &__body {
+    @include flex-shorthand(column, nowrap, 2.5rem, center, center);
+  }
+
+  &__heading {
+    font: $font-weight-bold 5rem $font-family-nunito-sans;
+  }
+
+  &__description {
+    max-inline-size: 70rem;
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  &__button {
+    @include remove-button-styles;
+    @include themify {
+      background-color: themed("color-accent");
+    }
+
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2rem 1rem rgba($very-dark-blue, 8%);
+  }
+}
