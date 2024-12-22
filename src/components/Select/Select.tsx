@@ -12,7 +12,7 @@ const Select = ({
   placeholder,
   children: options,
 }: {
-  value: SelectOption | undefined;
+  value: string;
   onChange: (newValue: typeof value) => void;
   placeholder: string;
   children: SelectOption[];
@@ -24,9 +24,9 @@ const Select = ({
   }
 
   function handleSelectOption(option: SelectOption | undefined) {
-    if (value === option) return;
+    if (value === option?.value) return;
 
-    onChange(option);
+    onChange(option?.value ?? "");
     setIsOpen(false);
   }
 
@@ -39,7 +39,7 @@ const Select = ({
   return (
     <div className={styles.select} onClick={handleToggleIsOpen}>
       <span className={styles.select__value}>
-        {value?.label ?? placeholder}
+        {options.find((option) => option.value === value)?.label ?? placeholder}
       </span>
 
       {value && !isOpen ? (
