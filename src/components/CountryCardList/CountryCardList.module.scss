@@ -1,0 +1,6 @@
+@use "../../styles/tools" as *;
+
+.country-card-list {
+  @include remove-list-styles;
+  @include flex-shorthand(column, nowrap, 4rem, center);
+}
