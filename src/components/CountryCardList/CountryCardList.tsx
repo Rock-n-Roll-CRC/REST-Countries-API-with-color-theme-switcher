@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import { type Country } from "../../shared/interfaces/Country.interface";
 
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import CountryCard from "../CountryCard/CountryCard";
 
 import styles from "./CountryCardList.module.scss";
@@ -94,7 +95,9 @@ const CountryCardList = ({
     })();
   }, []);
 
-  return (
+  return isLoading ? (
+    <LoadingSpinner position="centered" />
+  ) : (
     <ul className={styles["country-card-list"]}>
       {shownCountries.map((country, index) =>
         index === shownCountries.length - 1 ? (
