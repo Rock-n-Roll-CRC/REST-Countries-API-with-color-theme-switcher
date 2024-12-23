@@ -15,4 +15,12 @@
     font: $font-weight-bold 1.4rem $font-family-nunito-sans;
     cursor: default;
   }
+
+  @include media-up-shorthand(laptop) {
+    padding: 2.38rem 8rem;
+
+    &__heading {
+      font-size: 2.37rem;
+    }
+  }
 }

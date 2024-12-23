@@ -2,4 +2,8 @@
 
 .country-cards-container {
   @include flex-shorthand(column, nowrap, 3.2rem);
+
+  @include media-up-shorthand(laptop) {
+    gap: 4.8rem;
+  }
 }

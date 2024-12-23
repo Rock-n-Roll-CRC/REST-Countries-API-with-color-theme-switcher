@@ -3,4 +3,12 @@
 .country-card-list {
   @include remove-list-styles;
   @include flex-shorthand(column, nowrap, 4rem, center);
+
+  @include media-up-shorthand(laptop) {
+    @include grid-shorthand(null, repeat(3, auto), 7.6rem, 0, space-between);
+  }
+
+  @include media-up-shorthand(desktop) {
+    grid-template-columns: repeat(4, auto);
+  }
 }

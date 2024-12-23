@@ -36,4 +36,19 @@
       @include color-shorthand(themed("color-input"), themed("color-accent"));
     }
   }
+
+  @include media-up-shorthand(laptop) {
+    inline-size: 100%;
+    max-inline-size: 48rem;
+    min-block-size: 5.6rem;
+
+    &__icon {
+      @include max-size-shorthand(2rem, 2rem);
+    }
+
+    &__input {
+      padding-inline: 2.3rem;
+      font-size: 1.44rem;
+    }
+  }
 }

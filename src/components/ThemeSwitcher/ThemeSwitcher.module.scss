@@ -18,4 +18,14 @@
     font: $font-weight-semi-bold 1.2rem $font-family-nunito-sans;
     text-transform: capitalize;
   }
+
+  @include media-up-shorthand(laptop) {
+    &__icon {
+      @include max-size-shorthand(1.8rem, 1.8rem);
+    }
+
+    &__caption {
+      font-size: 1.6rem;
+    }
+  }
 }

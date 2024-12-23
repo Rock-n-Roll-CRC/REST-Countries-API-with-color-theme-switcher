@@ -2,4 +2,9 @@
 
 .country-card-search-options {
   @include flex-shorthand(column, nowrap, 4rem);
+
+  @include media-up-shorthand(laptop) {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
 }
