@@ -1,9 +1,13 @@
 @use "../../styles/tools" as *;
 
 .loading-spinner {
-  @include max-size-shorthand(3rem, 3rem);
+  @include max-size-shorthand(5rem, 5rem);
   @include themify {
     fill: themed("color-gray");
+  }
+
+  &--centered {
+    margin: 0 auto;
   }
 
   &--fullpage {
