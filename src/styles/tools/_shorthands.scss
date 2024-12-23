@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "../settings" as *;
+
 @mixin absolute-shorthand(
   $inset-block-start: auto,
   $inset-inline-end: auto,
@@ -33,7 +36,33 @@
   justify-content: $justify-content;
 }
 
+@mixin grid-shorthand(
+  $grid-template-rows: null,
+  $grid-template-columns: null,
+  $row-gap: 0,
+  $column-gap: 0,
+  $justify-content: null
+) {
+  display: grid;
+  grid-template-rows: $grid-template-rows;
+  grid-template-columns: $grid-template-columns;
+  gap: $row-gap $column-gap;
+  justify-content: $justify-content;
+}
+
 @mixin color-shorthand($color, $background-color) {
   color: $color;
   background-color: $background-color;
+}
+
+@mixin media-up-shorthand($size) {
+  @media (min-width: map.get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin media-down-shorthand($size) {
+  @media (max-width: map.get($breakpoints-down, $size)) {
+    @content;
+  }
 }
