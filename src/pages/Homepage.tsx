@@ -1,5 +1,3 @@
-// TODO: loading spinners + infinite scroll + responsive
-
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
@@ -13,6 +11,8 @@ import Select from "../components/Select/Select";
 import CountryCardList from "../components/CountryCardList/CountryCardList";
 
 const Homepage = () => {
+  const [page, setPage] = useState(1);
+
   const [searchParams, setSearchParams] = useSearchParams();
 
   const [searchedCountryName, setSearchedCountryName] = useState(
@@ -22,13 +22,19 @@ const Homepage = () => {
     searchParams.get("countryRegion") ?? "",
   );
 
+  function handleIncrementPage() {
+    setPage((page) => page + 1);
+  }
+
   function handleChangeSearchedCountryName(searchedCountryName: string) {
+    setPage(1);
     setSearchedCountryName(searchedCountryName);
     searchParams.set("countryName", searchedCountryName);
     setSearchParams(searchParams);
   }
 
   function handleChangeSearchedCountryRegion(searchedCountryRegion: string) {
+    setPage(1);
     setSearchedCountryRegion(searchedCountryRegion);
     searchParams.set("countryRegion", searchedCountryRegion);
     setSearchParams(searchParams);
@@ -67,6 +73,8 @@ const Homepage = () => {
           </CountryCardSearchOptions>
 
           <CountryCardList
+            page={page}
+            onIncrementPage={handleIncrementPage}
             searchedCountryName={searchedCountryName}
             searchedCountryRegion={searchedCountryRegion}
           />
