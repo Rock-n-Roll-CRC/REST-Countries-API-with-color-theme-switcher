@@ -1,9 +1,0 @@
-@use "../../styles/tools" as *;
-
-.loading-spinner-full-page {
-  @include size-shorthand(100vi, 100vb);
-  @include flex-shorthand(row, nowrap, null, center, center);
-  @include themify {
-    @include color-shorthand(themed("color-gray"), themed("color-main"));
-  }
-}

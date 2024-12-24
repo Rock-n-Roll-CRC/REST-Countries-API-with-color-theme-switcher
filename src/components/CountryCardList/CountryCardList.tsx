@@ -12,14 +12,14 @@ const COUNTRIES_PER_PAGE = 10;
 
 const CountryCardList = ({
   page,
-  onIncrementPage,
+  onMoveToNextPage,
   searchedCountryName,
   searchedCountryRegion,
 }: {
   page: number;
-  onIncrementPage: () => void;
-  searchedCountryName?: string | null;
-  searchedCountryRegion?: string | null;
+  onMoveToNextPage: () => void;
+  searchedCountryName?: string;
+  searchedCountryRegion?: string;
 }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [countries, setCountries] = useState<Country[]>([]);
@@ -51,11 +51,10 @@ const CountryCardList = ({
 
     return true;
   });
-
   const shownCountries = filteredCountries.slice(0, page * COUNTRIES_PER_PAGE);
 
   const observer = useRef<IntersectionObserver>();
-  const lastCountryRef = useCallback(
+  const lastCountryCardRef = useCallback(
     (node: HTMLLIElement | null) => {
       observer.current?.disconnect();
 
@@ -63,13 +62,13 @@ const CountryCardList = ({
 
       observer.current = new IntersectionObserver((entries) => {
         if (entries[0]?.isIntersecting) {
-          onIncrementPage();
+          onMoveToNextPage();
         }
       });
 
       observer.current.observe(node);
     },
-    [onIncrementPage],
+    [onMoveToNextPage],
   );
 
   useEffect(() => {
@@ -96,24 +95,21 @@ const CountryCardList = ({
   }, []);
 
   return isLoading ? (
-    <LoadingSpinner position="centered" />
+    <LoadingSpinner align="center" />
   ) : (
     <ul className={styles["country-card-list"]}>
-      {shownCountries.map((country, index) =>
-        index === shownCountries.length - 1 ? (
-          <li key={country.cca3} ref={lastCountryRef}>
-            <Link to={country.cca3}>
-              <CountryCard country={country} />
-            </Link>
-          </li>
-        ) : (
-          <li key={country.cca3}>
-            <Link to={country.cca3}>
-              <CountryCard country={country} />
-            </Link>
-          </li>
-        ),
-      )}
+      {shownCountries.map((country, index) => (
+        <li
+          key={country.cca3}
+          ref={
+            index === shownCountries.length - 1 ? lastCountryCardRef : undefined
+          }
+        >
+          <Link to={country.cca3}>
+            <CountryCard country={country} />
+          </Link>
+        </li>
+      ))}
     </ul>
   );
 };

@@ -13,8 +13,7 @@
   box-shadow: 0 0.2rem 1rem rgba($very-dark-blue, 8%);
 
   &__flag {
-    inline-size: 26.4rem;
-    block-size: 16rem;
+    @include size-shorthand(100%, 16rem);
   }
 
   &__body {

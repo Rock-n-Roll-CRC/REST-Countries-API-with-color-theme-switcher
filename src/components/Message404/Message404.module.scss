@@ -2,11 +2,7 @@
 @use "../../styles/tools" as *;
 
 .message404 {
-  @include size-shorthand(100vi, 100vb);
   @include flex-shorthand(column, nowrap, 5rem, center, center);
-  @include themify {
-    @include color-shorthand(themed("color-gray"), themed("color-main"));
-  }
 
   &__body {
     @include flex-shorthand(column, nowrap, 2.5rem, center, center);
@@ -25,7 +21,7 @@
   &__button {
     @include remove-button-styles;
     @include themify {
-      background-color: themed("color-accent");
+      @include color-shorthand(themed("color-gray"), themed("color-accent"));
     }
 
     padding: 1rem 1.5rem;

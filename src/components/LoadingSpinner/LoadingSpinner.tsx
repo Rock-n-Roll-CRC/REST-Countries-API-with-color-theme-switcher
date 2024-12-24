@@ -4,14 +4,14 @@ import styles from "./LoadingSpinner.module.scss";
 
 const LoadingSpinner = ({
   size,
-  position,
+  align,
 }: {
   size?: "fullpage";
-  position?: "centered";
+  align?: "center";
 }) => {
   return (
     <svg
-      className={`${styles["loading-spinner"] ?? ""} ${(size && styles[`loading-spinner--${size}`]) ?? ""} ${(position && styles[`loading-spinner--${position}`]) ?? ""}`}
+      className={`${styles["loading-spinner"] ?? ""} ${(size && styles[`loading-spinner--size-${size}`]) ?? ""} ${(align && styles[`loading-spinner--align-${align}`]) ?? ""}`}
     >
       <use href={new URL(`${iconsURL}#3-dots-bounce`, import.meta.url).href} />
     </svg>

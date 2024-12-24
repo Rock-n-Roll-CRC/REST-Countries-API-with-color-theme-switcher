@@ -4,7 +4,6 @@
   @include flex-shorthand(column, nowrap, 4rem);
 
   @include media-up-shorthand(laptop) {
-    flex-flow: row nowrap;
-    justify-content: space-between;
+    @include flex-shorthand(row, nowrap, null, null, space-between);
   }
 }

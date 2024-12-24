@@ -6,11 +6,11 @@
     fill: themed("color-gray");
   }
 
-  &--centered {
-    margin: 0 auto;
+  &--size-fullpage {
+    @include max-size-shorthand(10rem, 10rem);
   }
 
-  &--fullpage {
-    @include max-size-shorthand(10rem, 10rem);
+  &--align-center {
+    margin: 0 auto;
   }
 }

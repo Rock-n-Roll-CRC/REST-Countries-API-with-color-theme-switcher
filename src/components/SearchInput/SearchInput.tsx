@@ -11,7 +11,7 @@ const SearchInput = ({
 }: {
   name: string;
   id: string;
-  value: string | null;
+  value: string;
   onChange: (newValue: string) => void;
   placeholder?: string;
 }) => {
@@ -25,7 +25,7 @@ const SearchInput = ({
         type="search"
         name={name}
         id={id}
-        value={value ?? ""}
+        value={value}
         onChange={(event) => {
           onChange(event.target.value);
         }}

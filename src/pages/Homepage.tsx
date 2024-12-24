@@ -12,9 +12,7 @@ import CountryCardList from "../components/CountryCardList/CountryCardList";
 
 const Homepage = () => {
   const [page, setPage] = useState(1);
-
   const [searchParams, setSearchParams] = useSearchParams();
-
   const [searchedCountryName, setSearchedCountryName] = useState(
     searchParams.get("countryName") ?? "",
   );
@@ -22,7 +20,7 @@ const Homepage = () => {
     searchParams.get("countryRegion") ?? "",
   );
 
-  function handleIncrementPage() {
+  function handleMoveToNextPage() {
     setPage((page) => page + 1);
   }
 
@@ -74,7 +72,7 @@ const Homepage = () => {
 
           <CountryCardList
             page={page}
-            onIncrementPage={handleIncrementPage}
+            onMoveToNextPage={handleMoveToNextPage}
             searchedCountryName={searchedCountryName}
             searchedCountryRegion={searchedCountryRegion}
           />

@@ -8,6 +8,11 @@
   flex: auto;
   padding: 2.4rem 1.6rem;
 
+  &--page-loading,
+  &--page-not-found {
+    @include flex-shorthand(row, nowrap, null, center, center);
+  }
+
   @include media-up-shorthand(laptop) {
     padding: 4.8rem 8rem;
   }
