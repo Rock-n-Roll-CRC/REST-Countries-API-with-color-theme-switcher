@@ -1,0 +1,78 @@
+@use "../../styles/settings" as *;
+@use "../../styles/tools" as *;
+
+.country-details {
+  @include flex-shorthand(column, nowrap, 4.4rem);
+
+  align-self: center;
+  max-inline-size: 32rem;
+
+  &__flag {
+    inline-size: 100%;
+    max-block-size: 22.9rem;
+  }
+
+  &__body {
+    @include flex-shorthand(column, nowrap, 2.2rem);
+  }
+
+  &__name {
+    font: $font-weight-bold 2.15rem $font-family-nunito-sans;
+  }
+
+  &__container {
+    @include flex-shorthand(column, nowrap, 4.1rem);
+  }
+
+  &__description-list-container {
+    @include flex-shorthand(column, nowrap, 4.3rem);
+
+    font-size: 1.4rem;
+  }
+
+  &__description-list-1,
+  &__description-list-2 {
+    @include remove-list-styles;
+    @include flex-shorthand(column, nowrap, 1.1rem);
+  }
+
+  @include media-up-shorthand(laptop) {
+    flex-direction: row;
+    gap: 12rem;
+    align-items: center;
+    align-self: flex-start;
+    inline-size: 100%;
+    max-inline-size: none;
+
+    &__flag {
+      @include max-size-shorthand(56rem, 40.1rem);
+
+      flex: 1;
+    }
+
+    &__body {
+      gap: 2.9rem;
+      inline-size: 100%;
+      max-inline-size: 59.3rem;
+    }
+
+    &__name {
+      font-size: 3.15rem;
+    }
+
+    &__container {
+      gap: 7.1rem;
+    }
+
+    &__description-list-container {
+      @include flex-shorthand(row, nowrap, 1rem, null, space-between);
+
+      font-size: 1.57rem;
+    }
+
+    &__description-list-1,
+    &__description-list-2 {
+      gap: 0.85rem;
+    }
+  }
+}
