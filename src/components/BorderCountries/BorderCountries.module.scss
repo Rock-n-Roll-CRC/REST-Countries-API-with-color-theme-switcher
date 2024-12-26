@@ -1,0 +1,24 @@
+@use "../../styles/settings" as *;
+@use "../../styles/tools" as *;
+
+.border-countries {
+  @include flex-shorthand(column, nowrap, 1.8rem);
+
+  &__heading {
+    font: $font-weight-semi-bold 1.53rem $font-family-nunito-sans;
+  }
+
+  &__button-list {
+    @include remove-list-styles;
+    @include flex-shorthand(row, wrap, 1rem);
+  }
+
+  @include media-up-shorthand(laptop) {
+    @include flex-shorthand(row, nowrap, 1.5rem, center);
+
+    &__heading {
+      font-size: 1.6rem;
+      white-space: nowrap;
+    }
+  }
+}
