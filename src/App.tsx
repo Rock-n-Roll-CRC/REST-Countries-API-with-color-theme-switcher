@@ -8,6 +8,7 @@ import LoadingPage from "./pages/LoadingPage";
 import "./styles/main.scss";
 
 const Homepage = lazy(() => import("./pages/Homepage"));
+const CountryDetailsPage = lazy(() => import("./pages/CountryDetailsPage"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
         <Suspense fallback={<LoadingPage />}>
           <Routes>
             <Route index element={<Homepage />} />
+            <Route path="/:countryCCA3" element={<CountryDetailsPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>
