@@ -1,5 +1,6 @@
 export interface Country {
   cca3: string;
+  tld?: string[];
   name: {
     common: string;
     nativeName?: Record<
@@ -11,6 +12,7 @@ export interface Country {
     >;
     official: string;
   };
+  languages: Record<string, string>;
   flags: {
     alt?: string;
     png: string;
@@ -19,4 +21,13 @@ export interface Country {
   capital?: string[];
   population: number;
   region: string;
+  subregion?: string;
+  currencies: Record<
+    string,
+    {
+      name: string;
+      symbol: string;
+    }
+  >;
+  borders: string[];
 }
