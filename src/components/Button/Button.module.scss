@@ -1,0 +1,40 @@
+@use "../../styles/settings" as *;
+@use "../../styles/tools" as *;
+
+.button {
+  @include remove-button-styles;
+  @include flex-shorthand(row, nowrap, 1rem, center, center);
+  @include themify {
+    @include color-shorthand(themed("color-gray"), themed("color-accent"));
+  }
+
+  inline-size: 100%;
+  max-inline-size: 10.5rem;
+  padding: 0.7rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+  border-radius: 0.2rem;
+  box-shadow: 0 0.2rem 1rem rgba($very-dark-blue, 8%);
+
+  &--size-small {
+    padding: 0.35rem 2.8rem;
+  }
+
+  &__icon {
+    @include max-size-shorthand(1.5rem, 1.5rem);
+  }
+
+  @include media-up-shorthand(laptop) {
+    gap: 0.7rem;
+    max-inline-size: 13.6rem;
+    padding: 0.8rem;
+    font-size: 1.6rem;
+
+    &--size-small {
+      min-inline-size: 9.6rem;
+      min-block-size: 3rem;
+      padding: 0;
+      font-size: 1.4rem;
+    }
+  }
+}
