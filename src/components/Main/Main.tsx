@@ -6,7 +6,7 @@ const Main = ({
   page,
   children,
 }: {
-  page?: "loading" | "not-found";
+  page?: "loading" | "not-found" | "country-details";
   children: ReactNode;
 }) => (
   <main
