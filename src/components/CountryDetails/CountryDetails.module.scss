@@ -36,6 +36,10 @@
     @include flex-shorthand(column, nowrap, 1.1rem);
   }
 
+  &__description strong {
+    font-weight: $font-weight-semi-bold;
+  }
+
   @include media-up-shorthand(laptop) {
     flex-direction: row;
     gap: 12rem;

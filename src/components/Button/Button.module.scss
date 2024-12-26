@@ -9,7 +9,7 @@
   }
 
   inline-size: 100%;
-  max-inline-size: 10.5rem;
+  min-inline-size: 10.5rem;
   padding: 0.7rem;
   font-size: 1.4rem;
   cursor: pointer;
@@ -26,7 +26,7 @@
 
   @include media-up-shorthand(laptop) {
     gap: 0.7rem;
-    max-inline-size: 13.6rem;
+    min-inline-size: 13.6rem;
     padding: 0.8rem;
     font-size: 1.6rem;
 
