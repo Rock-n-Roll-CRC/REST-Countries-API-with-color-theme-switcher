@@ -1,16 +1,26 @@
 import { useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import {
+  useLoaderData,
+  useNavigation,
+  useSearchParams,
+} from "react-router-dom";
 
-import Header from "../components/Header/Header";
-import ThemeSwitcher from "../components/ThemeSwitcher/ThemeSwitcher";
-import Main from "../components/Main/Main";
-import CountryCardsContainer from "../components/CountryCardsContainer/CountryCardsContainer";
-import CountryCardSearchOptions from "../components/CountryCardSearchOptions/CountryCardSearchOptions";
-import SearchInput from "../components/SearchInput/SearchInput";
-import Select from "../components/Select/Select";
-import CountryCardList from "../components/CountryCardList/CountryCardList";
+import type { Country } from "../../shared/interfaces/Country.interface";
+
+import Header from "../../components/Header/Header";
+import ThemeSwitcher from "../../components/ThemeSwitcher/ThemeSwitcher";
+import Main from "../../components/Main/Main";
+import CountryCardsContainer from "../../components/CountryCardsContainer/CountryCardsContainer";
+import CountryCardSearchOptions from "../../components/CountryCardSearchOptions/CountryCardSearchOptions";
+import SearchInput from "../../components/SearchInput/SearchInput";
+import Select from "../../components/Select/Select";
+import CountryCardList from "../../components/CountryCardList/CountryCardList";
+import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 
 const Homepage = () => {
+  const navigation = useNavigation();
+  const countries = useLoaderData() as Country[];
+
   const [page, setPage] = useState(1);
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchedCountryName, setSearchedCountryName] = useState(
@@ -70,12 +80,17 @@ const Homepage = () => {
             </Select>
           </CountryCardSearchOptions>
 
-          <CountryCardList
-            page={page}
-            onMoveToNextPage={handleMoveToNextPage}
-            searchedCountryName={searchedCountryName}
-            searchedCountryRegion={searchedCountryRegion}
-          />
+          {navigation.state === "loading" ? (
+            <LoadingSpinner align="center" />
+          ) : (
+            <CountryCardList
+              countries={countries}
+              page={page}
+              onMoveToNextPage={handleMoveToNextPage}
+              searchedCountryName={searchedCountryName}
+              searchedCountryRegion={searchedCountryRegion}
+            />
+          )}
         </CountryCardsContainer>
       </Main>
     </>

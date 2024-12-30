@@ -25,7 +25,7 @@ const CountryCard = ({ country }: { country: Country }) => {
           </li>
 
           <li className={styles["country-card__description"]}>
-            <strong>Capital:</strong> {country.capital}
+            <strong>Capital:</strong> {country.capital?.join(", ")}
           </li>
         </ul>
       </div>

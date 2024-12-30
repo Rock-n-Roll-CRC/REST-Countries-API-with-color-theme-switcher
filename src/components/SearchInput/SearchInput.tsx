@@ -14,27 +14,25 @@ const SearchInput = ({
   value: string;
   onChange: (newValue: string) => void;
   placeholder?: string;
-}) => {
-  return (
-    <div className={styles["search-input"]}>
-      <svg className={styles["search-input__icon"]}>
-        <use href={new URL(`${iconsURL}#search-sharp`, import.meta.url).href} />
-      </svg>
+}) => (
+  <div className={styles["search-input"]}>
+    <svg className={styles["search-input__icon"]}>
+      <use href={new URL(`${iconsURL}#search-sharp`, import.meta.url).href} />
+    </svg>
 
-      <input
-        type="search"
-        name={name}
-        id={id}
-        value={value}
-        onChange={(event) => {
-          onChange(event.target.value);
-        }}
-        placeholder={placeholder}
-        autoComplete="off"
-        className={styles["search-input__input"]}
-      />
-    </div>
-  );
-};
+    <input
+      type="search"
+      name={name}
+      id={id}
+      value={value}
+      onChange={(event) => {
+        onChange(event.target.value);
+      }}
+      placeholder={placeholder}
+      autoComplete="off"
+      className={styles["search-input__input"]}
+    />
+  </div>
+);
 
 export default SearchInput;

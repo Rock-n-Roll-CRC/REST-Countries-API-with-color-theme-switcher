@@ -9,7 +9,7 @@
   padding: 2.4rem 1.6rem;
 
   &--page-loading,
-  &--page-not-found {
+  &--page-error {
     @include flex-shorthand(row, nowrap, null, center, center);
   }
 

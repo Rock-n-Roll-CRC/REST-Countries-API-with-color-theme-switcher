@@ -52,7 +52,7 @@ const CountryDetails = ({
               )}
 
               <li className={styles["country-details__description"]}>
-                <strong>Capital:</strong> {country.capital}
+                <strong>Capital:</strong> {country.capital?.join(", ")}
               </li>
             </ul>
 
