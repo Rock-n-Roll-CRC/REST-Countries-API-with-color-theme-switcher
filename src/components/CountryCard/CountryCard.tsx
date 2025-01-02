@@ -24,9 +24,11 @@ const CountryCard = ({ country }: { country: Country }) => {
             <strong>Region:</strong> {country.region}
           </li>
 
-          <li className={styles["country-card__description"]}>
-            <strong>Capital:</strong> {country.capital?.join(", ")}
-          </li>
+          {country.capital && (
+            <li className={styles["country-card__description"]}>
+              <strong>Capital:</strong> {country.capital.join(", ")}
+            </li>
+          )}
         </ul>
       </div>
     </article>
