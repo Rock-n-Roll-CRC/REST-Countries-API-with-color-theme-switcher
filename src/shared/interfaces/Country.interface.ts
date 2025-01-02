@@ -1,9 +1,9 @@
 export interface Country {
   cca3: string;
-  tld?: string[];
+  tld: string[];
   name: {
     common: string;
-    nativeName?: Record<
+    nativeName: Record<
       string,
       {
         common: string;
@@ -18,7 +18,7 @@ export interface Country {
     png: string;
     svg: string;
   };
-  capital?: string[];
+  capital: string[];
   population: number;
   region: string;
   subregion?: string;
