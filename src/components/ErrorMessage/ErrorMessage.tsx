@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { isRouteErrorResponse, Link } from "react-router-dom";
 
 import Button from "../Button/Button";
 
@@ -7,6 +7,8 @@ import iconsURL from "../../assets/icons.svg?no-inline";
 import styles from "./ErrorMessage.module.scss";
 
 const ErrorMessage = ({ error }: { error: unknown }) => {
+  if (!isRouteErrorResponse(error) || !(error instanceof Error)) return;
+
   const isPageNotFound = error.status === 404;
 
   return (
@@ -19,7 +21,7 @@ const ErrorMessage = ({ error }: { error: unknown }) => {
         <p className={styles["error-message__description"]}>
           {isPageNotFound
             ? "Sorry, we couldn't find this page. But don't worry, you can find plenty of other things on our homepage!"
-            : (error.message ?? error.data)}
+            : error.message || error.data}
         </p>
 
         <Link to="/">
