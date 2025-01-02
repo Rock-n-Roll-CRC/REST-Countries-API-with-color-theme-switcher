@@ -29,7 +29,7 @@ const CountryDetails = ({
             className={styles["country-details__description-list-container"]}
           >
             <ul className={styles["country-details__description-list-1"]}>
-              {country.name.nativeName && (
+              {Object.keys(country.name.nativeName).length > 0 && (
                 <li className={styles["country-details__description"]}>
                   <strong>Native Name:</strong>{" "}
                   {Object.values(country.name.nativeName).at(-1)?.common}
@@ -51,27 +51,33 @@ const CountryDetails = ({
                 </li>
               )}
 
-              <li className={styles["country-details__description"]}>
-                <strong>Capital:</strong> {country.capital?.join(", ")}
-              </li>
+              {Object.keys(country.capital).length > 0 && (
+                <li className={styles["country-details__description"]}>
+                  <strong>Capital:</strong> {country.capital.join(", ")}
+                </li>
+              )}
             </ul>
 
             <ul className={styles["country-details__description-list-2"]}>
-              {country.tld && (
+              {country.tld.length > 0 && (
                 <li className={styles["country-details__description"]}>
                   <strong>Top Level Domain:</strong> {country.tld.join(", ")}
                 </li>
               )}
 
-              <li className={styles["country-details__description"]}>
-                <strong>Currencies:</strong>{" "}
-                {Object.values(country.currencies).at(0)?.name}
-              </li>
+              {Object.keys(country.currencies).length > 0 && (
+                <li className={styles["country-details__description"]}>
+                  <strong>Currencies:</strong>{" "}
+                  {Object.values(country.currencies).at(0)?.name}
+                </li>
+              )}
 
-              <li className={styles["country-details__description"]}>
-                <strong>Languages:</strong>{" "}
-                {Object.values(country.languages).reverse().join(", ")}
-              </li>
+              {Object.keys(country.languages).length > 0 && (
+                <li className={styles["country-details__description"]}>
+                  <strong>Languages:</strong>{" "}
+                  {Object.values(country.languages).reverse().join(", ")}
+                </li>
+              )}
             </ul>
           </div>
 

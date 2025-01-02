@@ -24,7 +24,7 @@ const CountryCard = ({ country }: { country: Country }) => {
             <strong>Region:</strong> {country.region}
           </li>
 
-          {country.capital && (
+          {country.capital.length > 0 && (
             <li className={styles["country-card__description"]}>
               <strong>Capital:</strong> {country.capital.join(", ")}
             </li>
