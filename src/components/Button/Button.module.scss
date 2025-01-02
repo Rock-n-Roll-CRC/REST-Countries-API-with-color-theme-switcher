@@ -24,7 +24,7 @@
     @include max-size-shorthand(1.5rem, 1.5rem);
   }
 
-  @include media-up-shorthand(laptop) {
+  @include media-up-shorthand(tablet-l) {
     gap: 0.7rem;
     min-inline-size: 13.6rem;
     padding: 0.8rem;

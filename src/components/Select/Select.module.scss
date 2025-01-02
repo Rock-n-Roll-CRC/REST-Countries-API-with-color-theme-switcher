@@ -2,7 +2,7 @@
 @use "../../styles/tools" as *;
 
 .select {
-  @include flex-shorthand(row, nowrap, null, center, space-between);
+  @include flex-shorthand(row, nowrap, 2rem, center, space-between);
 
   position: relative;
   padding: 1.5rem 1.8rem 1.5rem 2.4rem;
@@ -73,12 +73,19 @@
     }
   }
 
-  @include media-up-shorthand(laptop) {
+  @include media-up-shorthand(tablet-s) {
+    &,
+    &__option-list {
+      inline-size: 100%;
+      max-inline-size: 16rem;
+    }
+  }
+
+  @include media-up-shorthand(tablet-l) {
     font-size: 1.42rem;
 
     &,
     &__option-list {
-      inline-size: 100%;
       max-inline-size: 20rem;
     }
 

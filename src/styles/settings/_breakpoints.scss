@@ -1,13 +1,19 @@
 /* "min-width" */
 $breakpoints-up: (
-  mobile: 23.438rem,
+  mobile-s: 23.438rem,
+  mobile-l: 26.563rem,
+  tablet-s: 31.563rem,
+  tablet-l: 48rem,
   laptop: 64rem,
   desktop: 90rem,
 );
 
 /* "max-width" */
 $breakpoints-down: (
-  mobile: 23.428rem,
+  mobile-s: 23.428rem,
+  mobile-l: 26.553rem,
+  tablet-s: 31.553rem,
+  tablet-l: 47.9rem,
   laptop: 63.9rem,
   desktop: 89.9rem,
 );

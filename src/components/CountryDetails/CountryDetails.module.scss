@@ -44,9 +44,9 @@
     flex-direction: row;
     gap: 12rem;
     align-items: center;
-    align-self: flex-start;
+    align-self: center;
     inline-size: 100%;
-    max-inline-size: none;
+    max-inline-size: 127.5rem;
 
     &__flag {
       @include max-size-shorthand(56rem, 40.1rem);
@@ -69,14 +69,19 @@
     }
 
     &__description-list-container {
-      @include flex-shorthand(row, nowrap, 1rem, null, space-between);
+      @include flex-shorthand(row, nowrap, 1rem, null, null);
 
       font-size: 1.57rem;
     }
 
     &__description-list-1,
     &__description-list-2 {
+      flex: 1;
       gap: 0.85rem;
+    }
+
+    &__description-list-1 {
+      max-inline-size: 25rem;
     }
   }
 }

@@ -3,7 +3,7 @@
 .country-card-search-options {
   @include flex-shorthand(column, nowrap, 4rem);
 
-  @include media-up-shorthand(laptop) {
+  @include media-up-shorthand(tablet-s) {
     @include flex-shorthand(row, nowrap, null, null, space-between);
   }
 }

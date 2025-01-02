@@ -11,6 +11,8 @@
   &--page-loading,
   &--page-error {
     @include flex-shorthand(row, nowrap, null, center, center);
+
+    padding: 2rem;
   }
 
   &--page-country-details {
@@ -19,7 +21,7 @@
     padding: 4rem 2.75rem;
   }
 
-  @include media-up-shorthand(laptop) {
+  @include media-up-shorthand(tablet-l) {
     padding: 4.8rem 8rem;
 
     &--page-country-details {

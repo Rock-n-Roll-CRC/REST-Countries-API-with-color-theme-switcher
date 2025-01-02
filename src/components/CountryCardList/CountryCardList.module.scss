@@ -4,8 +4,12 @@
   @include remove-list-styles;
   @include flex-shorthand(column, nowrap, 4rem, center);
 
+  @include media-up-shorthand(tablet-l) {
+    @include grid-shorthand(null, repeat(2, auto), 7.6rem, 0, space-between);
+  }
+
   @include media-up-shorthand(laptop) {
-    @include grid-shorthand(null, repeat(3, auto), 7.6rem, 0, space-between);
+    grid-template-columns: repeat(3, auto);
   }
 
   @include media-up-shorthand(desktop) {

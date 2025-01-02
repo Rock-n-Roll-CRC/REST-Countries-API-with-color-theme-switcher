@@ -1,7 +1,20 @@
 @use "../settings" as *;
+@use "../tools" as *;
 
 html {
   font-size: 62.5%;
+
+  @include media-up-shorthand(mobile-l) {
+    font-size: 65.5%;
+  }
+
+  @include media-up-shorthand(tablet-l) {
+    font-size: 62.5%;
+  }
+
+  @include media-up-shorthand(desktop) {
+    font-size: calc(35.5% + 0.3vi);
+  }
 }
 
 body {

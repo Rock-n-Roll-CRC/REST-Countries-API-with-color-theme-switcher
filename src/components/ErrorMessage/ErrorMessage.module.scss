@@ -14,8 +14,27 @@
   }
 
   &__description {
-    max-inline-size: 70rem;
-    font-size: 2.5rem;
+    max-inline-size: 40rem;
+    font-size: 2rem;
     text-align: center;
+  }
+
+  &__icon {
+    @include max-size-shorthand(10rem, 10rem);
+  }
+
+  @include media-up-shorthand(tablet-l) {
+    &__heading {
+      font-size: 7rem;
+    }
+
+    &__description {
+      max-inline-size: 50rem;
+      font-size: 2.5rem;
+    }
+
+    &__icon {
+      @include max-size-shorthand(12rem, 12rem);
+    }
   }
 }

@@ -19,6 +19,16 @@
     text-transform: capitalize;
   }
 
+  @include media-up-shorthand(tablet-l) {
+    &__icon {
+      @include max-size-shorthand(1.6rem, 1.6rem);
+    }
+
+    &__caption {
+      font-size: 1.4rem;
+    }
+  }
+
   @include media-up-shorthand(laptop) {
     &__icon {
       @include max-size-shorthand(1.8rem, 1.8rem);

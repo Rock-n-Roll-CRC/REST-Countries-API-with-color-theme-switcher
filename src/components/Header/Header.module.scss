@@ -16,9 +16,15 @@
     cursor: default;
   }
 
-  @include media-up-shorthand(laptop) {
+  @include media-up-shorthand(tablet-l) {
     padding: 2.38rem 8rem;
 
+    &__heading {
+      font-size: 1.8rem;
+    }
+  }
+
+  @include media-up-shorthand(laptop) {
     &__heading {
       font-size: 2.37rem;
     }
